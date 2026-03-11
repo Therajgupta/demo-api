@@ -1,3 +1,11 @@
 const app = require('./src/app');
+
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// webhook test message
+console.log("Jenkins Webhook Test - Deployment Triggered");
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Deployed at: ${new Date()}`);
+});
